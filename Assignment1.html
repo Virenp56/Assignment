@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Todays Date
+        let todayDate = new Date();
+        document.write(todayDate + "<br>");
+
+        // December 15,2022
+        let todayDate1 = new Date("December 15,2022");
+        document.write(todayDate1 + "<br>");
+
+        //current time and date
+        let a = todayDate.getDay();
+        let arr = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+        document.write("Today is: " + arr[a] + "<br>");
+
+        let hr = todayDate.getHours();
+        let min = todayDate.getMinutes();
+        let sec = todayDate.getSeconds();
+        if (hr > 12) {
+            hr = hr - 12;
+            document.write("Current time is : " + hr + "PM : " + min + " : " + sec + "<br>");
+        }
+        else {
+            document.write("Current time is : " + hr + "AM : " + min + " : " + sec + "<br>");
+        }
+
+        //math methods
+        document.write(Math.sqrt(9) + "<br>");
+        document.write(Math.max(9, 56) + "<br>");
+        document.write(Math.random() + "<br>");
+
+
+        //functions
+        let x = 299;
+        if (x > 100 && x < 500) {
+            document.write(x + " is between 100 and 500. <br>");
+        }
+        else {
+            document.write(x + " is not between 100 and 500. <br>");
+        }
+
+        function checkEquality(a, b) {
+            if (a === b) {
+                document.write("true <br>");
+            }
+            else {
+                document.write("false <br>");
+            }
+        }
+        checkEquality(5, "5");
+        checkEquality(1, 1);
+
+    </script>
+</body>
+
+</html>
