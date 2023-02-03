@@ -10,56 +10,159 @@
 
 <body>
     <script>
-        //Reverse String
-        var str = "my name is viren patel"
+
+        //Reverse String M:1
+        var str = "My name is viren patel"
+        for (var i = str.length - 1; i >= 0; i--) {
+            document.write(str[i]);
+        }
+        document.write("<br>");
+
+        //Reverse String M:2
+
         var strArray = str.split(" ");
         for (var i = strArray.length - 1; i >= 0; i--) {
             document.write(strArray[i] + " ");
         }
         document.write("<br>");
 
+
         //Armstrong Number
         function armstrongNumber(n) {
-            let strNumber = n.toString();
-            let a = Number.parseInt(strNumber.length);
-            //  document.write(typeof a);
-            let sum = 0;
-            for (let iterator of strNumber) {
+            var strNumber = n.toString();
+            var a = (strNumber.length);
+            // document.write(typeof a);
+            var sum = 0;
+            for (var iterator of strNumber) {
                 sum = sum + Math.pow(Number.parseInt(iterator), a);
             }
             if (n == sum) {
-                document.write(n + " is amstrong number. <br>");
+                document.write(`${n} :is amstrong number. <br>`);
             }
             else {
-                document.write(n + " is not an amstrong number. <br>");
+                document.write(`${n} :is not an amstrong number. <br>`);
             }
             // document.write(sum);
         }
         armstrongNumber(1634);
 
-        //Palindrom Number
-        function palindromNumber(num) {
-            let strNumber = num.toString();
-            var strArray = strNumber.split("");
-            let newStr = "";
 
-            for (let i = strArray.length - 1; i >= 0; i--) {
-                newStr = newStr + strArray[i];
+        //Palindrom Number
+        function palindromeNumber(num) {
+            var strNumber = num.toString();
+            var newStr = "";
+            for (var i = strNumber.length - 1; i >= 0; i--) {
+                newStr = newStr + strNumber[i];
 
             }
 
             if (strNumber == newStr) {
-                document.write(num + " is a palindrom number. <br>")
+                document.write(`${num} :is a palindrome number. <br>`)
             }
             else {
-                document.write(num + " is not a palindrom number. <br>")
+                document.write(`${num} :is not a palindrome number. <br>`)
             }
             // document.write(newStr);
         }
-        palindromNumber(12321);
+        palindromeNumber("abcba");
+
+
+        // function palindromeOnlyForNumber(num) {
+        //     while (num != 0) {
+        //         var a = num % 10;
+        //         var b = num / 10;
+        //         var n = num.toString().length;
+        //         a = a * Math.pow(10, n);
+        //         palindromeOnlyForNumber(a);
+        //     }
+        //     // document.write(newStr);
+        // }
+        // palindromeOnlyForNumber(1235321);
+
+
+        //Movies
+        let movies = [
+            {
+
+                "name": "Iron-Man",
+                "director": "Jon Favreau",
+                "watched": true,
+
+            },
+            {
+                "name": "Guardians of the Galaxy",
+                "director": "James Gunn",
+                "watched": true,
+            },
+            {
+                "name": "Eternals",
+                "director": "Chloé Zhao",
+                "watched": false,
+            },
+            {
+                "name": "Captain Marvel",
+                "director": "Anna Boden and Ryan Fleck",
+                "watched": false,
+            },
+            {
+                "name": "Black Panther",
+                "director": "Ryan Coogler",
+                "watched": true,
+            }];
+
+        for (const iterator of movies) {
+            for (const key in iterator) {
+                document.write(key + " : " + iterator[key] + "<br>");
+            }
+
+        }
+
+
+        //sum of number in Array
+        var num = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1];
+        sumOfArray(...num);
+
+        function sumOfArray(...number) {
+            var sum = 0;
+            for (let i = 0; i < number.length; i++) {
+                sum = sum + number[i];
+            }
+            document.write(sum + "<br>");
+        }
 
 
 
+
+        //Grading System
+        var grade = 91;
+        var a = Math.trunc(grade / 10);
+        switch (a) {
+            case 10:
+                document.write("A- grade");
+                break;
+            case 9:
+                document.write("A- grade");
+                break;
+            case 8:
+                document.write("B- grade");
+                break;
+            case 7:
+                document.write("C- grade");
+                break;
+            case 6:
+                document.write("D- grade");
+                break;
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                document.write("F- grade");
+                break;
+            default:
+                document.write("Enter correct marks");
+        }
     </script>
 </body>
 
