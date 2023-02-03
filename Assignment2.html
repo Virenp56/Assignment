@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Reverse String
+        var str = "my name is viren patel"
+        var strArray = str.split(" ");
+        for (var i = strArray.length - 1; i >= 0; i--) {
+            document.write(strArray[i] + " ");
+        }
+        document.write("<br>");
+
+        //Armstrong Number
+        function armstrongNumber(n) {
+            let strNumber = n.toString();
+            let a = Number.parseInt(strNumber.length);
+            //  document.write(typeof a);
+            let sum = 0;
+            for (let iterator of strNumber) {
+                sum = sum + Math.pow(Number.parseInt(iterator), a);
+            }
+            if (n == sum) {
+                document.write(n + " is amstrong number. <br>");
+            }
+            else {
+                document.write(n + " is not an amstrong number. <br>");
+            }
+            // document.write(sum);
+        }
+        armstrongNumber(1634);
+
+        //Palindrom Number
+        function palindromNumber(num) {
+            let strNumber = num.toString();
+            var strArray = strNumber.split("");
+            let newStr = "";
+
+            for (let i = strArray.length - 1; i >= 0; i--) {
+                newStr = newStr + strArray[i];
+
+            }
+
+            if (strNumber == newStr) {
+                document.write(num + " is a palindrom number. <br>")
+            }
+            else {
+                document.write(num + " is not a palindrom number. <br>")
+            }
+            // document.write(newStr);
+        }
+        palindromNumber(12321);
+
+
+
+    </script>
+</body>
+
+</html>
