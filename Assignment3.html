@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let movies =
+        {
+
+            "name": "Iron-Man",
+            "director": "Jon Favreau",
+            "watched": true
+
+        };
+        console.log(typeof movies);
+
+
+        // JSON Object to String
+        var newMovies = JSON.stringify(movies);
+        console.log(newMovies);
+        console.log(typeof newMovies);
+
+        // JSON string to Object
+        var newMovies1 = JSON.parse(newMovies);
+        console.log(newMovies1);
+        console.log(typeof newMovies1);
+
+        //Comparing two objects
+        console.log(movies === newMovies1);
+        console.log(JSON.stringify(movies) === JSON.stringify(newMovies1));
+
+
+
+    </script>
+</body>
+
+</html>
