@@ -81,15 +81,15 @@
 
 
         //Movies
-        let movies = `[
-            {
+        let movies = [
+            {//movies[0]
 
                 name: "Iron-Man",
                 director: "Jon Favreau",
                 watched: true,
 
             },
-            {
+            {//movies[1]
                 name: "Guardians of the Galaxy",
                 director: "James Gunn",
                 watched: true,
@@ -108,14 +108,31 @@
                 name: "Black Panther",
                 director: "Ryan Coogler",
                 watched: true,
-            }]`;
+            }];
 
-        for (const iterator of movies) {
-            for (const key in iterator) {
-                document.write(key + " : " + iterator[key] + "<br>");
+
+        for (let index = 0; index < movies.length; index++) {
+            if (movies[index].watched == true) {
+                document.write(`"You have already watched ${movies[index].name} by ${movies[index].director} "<br>`);
+            }
+            else {
+                document.write(`"You still need to watch ${movies[index].name} by ${movies[index].director}"<br>`);
             }
 
-        }
+        };
+
+        let obj = {
+            name: "Iron-Man",
+            director: "Jon Favreau",
+            watched: true,
+        };
+
+        document.write(obj.name);
+
+
+
+
+
 
 
         //sum of number in Array
