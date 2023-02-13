@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //Reverse Number
+        function ReverseNumber(params) {
+            var x = String(params);
+            var temp = "";
+            for (let i = x.length - 1; i >= 0; i--) {
+                temp += x[i];
+            }
+            console.log(Number(temp));
+        }
+        ReverseNumber(1208);
+
+
+
+        //Arrange in Alphabetical order - words in sentence
+        function AlphabeticalOrder(params) {
+            params.toUpperCase();
+            var x = params.split(" ");
+            console.log(x.sort());
+        }
+        AlphabeticalOrder("My name Is viren");
+        // -letter in word
+        function LetterInAlphabeticalOrder(params) {
+            var x = params.split("")
+            console.log(x.sort());
+        }
+        LetterInAlphabeticalOrder("viren");
+
+
+
+        //Firts letter to Upper Case
+        function FirstUpperCase(params) {
+            var x = params.split(" ");
+            for (let i = 0; i < x.length; i++) {
+                x[i] = x[i].substring(0, 1).toUpperCase() + x[i].substring(1);
+                console.log(x[i]);
+            }
+        }
+        FirstUpperCase("My name Is viren");
+
+
+
+        //Longest word in String
+        function LongestWord(params) {
+            var temp = [];
+            var x = params.split(" ");
+            for (let i = 0; i < x.length; i++) {
+                temp[i] = x[i].length;
+            }
+            console.log("Longest Word is: " + x[temp.indexOf(Math.max(...temp))]);
+        }
+        LongestWord("My name Is viren");
+
+
+
+        //CountVowels
+        function CountVowels(params) {
+            var x = params.split("");
+            var count = 0;
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] == 'a' || x[i] == 'A') {
+                    count += 1;
+                } else if (x[i] == 'e' || x[i] == 'E') {
+                    count += 1;
+                }
+                else if (x[i] == 'i' || x[i] == 'I') {
+                    count += 1;
+                }
+                else if (x[i] == 'o' || x[i] == 'O') {
+                    count += 1;
+                }
+                else if (x[i] == 'u' || x[i] == 'U') {
+                    count += 1;
+                }
+                else {
+                    continue;
+                }
+            }
+            console.log("Total number of vowels in string: " + count);
+        }
+        CountVowels("My name Is viren");
+
+
+
+        // LongestCountryName
+        function LongestCountryName(params) {
+            let temp = [];
+            for (let i = 0; i < params.length; i++) {
+                temp[i] = params[i].length;
+            }
+            console.log("Longest Country Name is: " + params[temp.indexOf(Math.max(...temp))]);
+        }
+        LongestCountryName(["India", "Japan", "united States", "pakistan", "banglades"]);
+
+
+
+
+        //JavaScript function as parameter
+        function Greatings() {
+            return "Hello";
+        }
+        function Message(a, callback) {
+            console.log(callback + " " + a);
+        }
+        Message("viren", Greatings());
+
+
+
+        //Get Function Name
+
+    </script>
+</body>
+
+</html>
