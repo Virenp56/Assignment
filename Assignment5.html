@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var newObject = {
+            name: "Viren",
+            age: 21,
+        }
+
+        // 1. Write a JavaScript function to retrieve all the values of an object's properties.
+        function retrieveProperties(params) {
+            return Object.values(params);
+        }
+        console.log(retrieveProperties(newObject));
+
+        // 2. Write a JavaScript function to convert an object into a list of `[key, value]` pairs.
+        function objectIntoList(params) {
+            return Object.entries(params);
+        }
+        console.log(objectIntoList(newObject));
+
+        // 3. Write a JavaScript function to get a copy of the object where the keys have become the values and the values the keys.
+        function swapKeyValue(params) {
+            var newObj = {};
+            for (var key in params) {
+                newObj[params[key]] = key;
+            }
+            return newObj;
+        }
+        console.log(swapKeyValue(newObject));
+
+        // 4. Write a JavaScript program to find the most frequent item of an array.
+
+        // var arr = [1, 2, 3, 4, 1, 2, 1, 1, 2, 3];
+        // function frequentItem(params) {
+        //     var tempArr = [];
+        //     for (let i = 0; i < params.length; i++) {
+        //         for (let j = i + 1; j < params.length; j++) {        
+        //         }
+        //     }
+        // }
+        // console.log(frequentItem(newObject));
+
+        // 5. Write a JavaScript program to remove duplicate items from an array(ignore case sensitivity).
+        arr3 = ['a', 'b', 'c', 'd', 'a', 'b']
+        function removeDuplicate(params) {
+            for (let i = 0; i < params.length; i++) {
+                for (let j = i + 1; j < params.length; j++) {
+                    if (params[i] == params[j]) {
+                        params.splice(j, 1);
+                        j--;
+                    }
+                }
+            }
+            return params
+        }
+        console.log(removeDuplicate(arr3));
+
+        // 6. Write a JavaScript function to merge two arrays and removes all duplicates elements.
+        var arr1 = [1, 2, 3, 4, 4, 4];
+        var arr2 = [4, 5, 6, 7, 4];
+        function mergeTwoArrays(params1, params2) {
+            var newArr = params1.concat(params2);
+            //    debugger
+            for (let i = 0; i < newArr.length; i++) {
+                //    debugger
+                for (let j = i + 1; j < newArr.length; j++) {
+                    if (newArr[i] == newArr[j]) {
+                        newArr.splice(j, 1);
+                        j--;
+                    }
+                }
+            }
+            return newArr
+        }
+        console.log(mergeTwoArrays(arr1, arr2));
+
+        // 7. Write a JavaScript function to remove a specific element from an array.
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function removeElement(params, a) {
+            if (params.indexOf(a) == -1) {
+                return "Enter valied element"
+            }
+            else {
+                var newArr = params.filter(values =>
+                    (values !== a));
+                return newArr;
+            }
+        }
+        console.log(removeElement(array, 9));
+
+        // 8. Write a JavaScript function to get a random item from an array.[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        function randomItem(params) {
+            var len = params.length - 1;
+            return params[Math.round(Math.random() * len)]
+        }
+        console.log(randomItem(array));
+
+        // 9. Write a JavaScript function to filter false, null, 0 and blank values from an array.[58, '', 'abcd', true, null, false, 0]
+        var array1 = [58, '', 'abcd', true, null, false, 0, ""]
+        function filterFunction(params) {
+            var newArr = array1.filter(values =>
+                (values !== false && values !== null && values !== 0 && values !== '')
+            )
+            return newArr
+        }
+        console.log(filterFunction(array1));
+
+
+    </script>
+</body>
+
+</html>
