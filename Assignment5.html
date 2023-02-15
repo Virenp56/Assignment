@@ -19,13 +19,15 @@
         function retrieveProperties(params) {
             return Object.values(params);
         }
-        console.log(retrieveProperties(newObject));
+        let a = retrieveProperties(newObject);
+        console.log(`values of object are: ${a}`);
 
         // 2. Write a JavaScript function to convert an object into a list of `[key, value]` pairs.
         function objectIntoList(params) {
             return Object.entries(params);
         }
-        console.log(objectIntoList(newObject));
+        let b = objectIntoList(newObject);
+        console.log(b);
 
         // 3. Write a JavaScript function to get a copy of the object where the keys have become the values and the values the keys.
         function swapKeyValue(params) {
@@ -35,11 +37,11 @@
             }
             return newObj;
         }
-        console.log(swapKeyValue(newObject));
+        let c = swapKeyValue(newObject);
+        console.log(c);
 
         // 4. Write a JavaScript program to find the most frequent item of an array.
-
-        var arr = [1, 2, 3, 4, 1, 2, 1, 1, 2, 3];
+        var arr = ['a', 'b', 'c', 'd', 'a', 'b', 'a'];
         function frequentItem(params) {
             var temp = 0;
             var max = 0;
@@ -53,13 +55,12 @@
                         max = count;
                         temp = params[i];
                     }
-
                 }
                 return temp
             }
-
         }
-        console.log(frequentItem(newObject));
+        let d = frequentItem(arr);
+        console.log(`most frequent item of an array is : ${d}`);
 
         // 5. Write a JavaScript program to remove duplicate items from an array(ignore case sensitivity).
         arr3 = ['a', 'b', 'c', 'd', 'a', 'b']
@@ -74,7 +75,8 @@
             }
             return params
         }
-        console.log(removeDuplicate(arr3));
+        let e = removeDuplicate(arr3);
+        console.log(`array after duplicate item removed: ${e}`);
 
         // 6. Write a JavaScript function to merge two arrays and removes all duplicates elements.
         var arr1 = [1, 2, 3, 4, 4, 4];
@@ -93,7 +95,9 @@
             }
             return newArr
         }
-        console.log(mergeTwoArrays(arr1, arr2));
+        let f = mergeTwoArrays(arr1, arr2);
+        console.log(`array after all duplicate item removed: ${f}`);
+
 
         // 7. Write a JavaScript function to remove a specific element from an array.
         let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -107,14 +111,18 @@
                 return newArr;
             }
         }
-        console.log(removeElement(array, 9));
+        let g = removeElement(array, 9);
+        console.log(`array after removing element : ${g}`);
+
 
         // 8. Write a JavaScript function to get a random item from an array.[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         function randomItem(params) {
             var len = params.length - 1;
             return params[Math.round(Math.random() * len)]
         }
-        console.log(randomItem(array));
+        let h = randomItem(array);
+        console.log(`random element form array : ${h}`);
+
 
         // 9. Write a JavaScript function to filter false, null, 0 and blank values from an array.[58, '', 'abcd', true, null, false, 0]
         var array1 = [58, '', 'abcd', true, null, false, 0, ""]
@@ -124,7 +132,8 @@
             )
             return newArr
         }
-        console.log(filterFunction(array1));
+        let i = filterFunction(array1)
+        console.log(`array after filtering element: ${i}`);
 
 
     </script>

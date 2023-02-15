@@ -11,61 +11,73 @@
 <body>
     <script>
 
-        //Reverse Number
-        function ReverseNumber(params) {
-            var x = String(params);
-            var temp = "";
-            for (let i = x.length - 1; i >= 0; i--) {
-                temp += x[i];
+        //1. Reverse Number
+        function reverseNumber(params) {
+            if (params < -1) {
+                params = params * (-1);
+                return "-" + reverseNumber(params)
             }
-            console.log(Number(temp));
+            else {
+                var x = String(params);
+                var temp = "";
+                for (let i = x.length - 1; i >= 0; i--) {
+                    temp += x[i];
+                }
+                return (Number(temp));
+            }
         }
-        ReverseNumber(1208);
+        let a = reverseNumber(-1208);
+        console.log(`Reverse Number is: ${a}`);
 
 
 
-        //Arrange in Alphabetical order - words in sentence
+        //2. Arrange in Alphabetical order - words in sentence
         function AlphabeticalOrder(params) {
-            params.toUpperCase();
-            var x = params.split(" ");
-            console.log(x.sort());
+            var x = params.toUpperCase().split(" ");
+            return (x.sort());
         }
-        AlphabeticalOrder("My name Is viren");
+        let b = AlphabeticalOrder("My name Is viren");
+        console.log(`words of sentence in Alphabetical order : ${b}`);
         // -letter in word
         function LetterInAlphabeticalOrder(params) {
             var x = params.split("")
-            console.log(x.sort());
+            return (x.sort());
         }
-        LetterInAlphabeticalOrder("viren");
+        let c = LetterInAlphabeticalOrder("viren");
+        console.log(`letters of word in Alphabetical order : ${c}`);
 
 
 
-        //Firts letter to Upper Case
+        //3. Firts letter to Upper Case
         function FirstUpperCase(params) {
             var x = params.split(" ");
+            var tempStr = ""
             for (let i = 0; i < x.length; i++) {
-                x[i] = x[i].substring(0, 1).toUpperCase() + x[i].substring(1);
+                tempStr = tempStr + x[i].substring(0, 1).toUpperCase() + x[i].substring(1) + " ";
             }
-            console.log(x);
+            return (tempStr);
         }
-        FirstUpperCase("My name Is viren");
+        let d = FirstUpperCase("My name Is viren");
+        console.log(`first letter of alphabet in Upper case: ${d}`);
 
 
 
-        //Longest word in String
+
+        //4. Longest word in String
         function LongestWord(params) {
             var temp = [];
             var x = params.split(" ");
             for (let i = 0; i < x.length; i++) {
                 temp[i] = x[i].length;
             }
-            console.log("Longest Word is: " + x[temp.indexOf(Math.max(...temp))]);
+            return x[temp.indexOf(Math.max(...temp))];
         }
-        LongestWord("My name Is viren");
+        let e = LongestWord("My name Is viren");
+        console.log(`Longest Word is: ${e}`);
 
 
 
-        //CountVowels
+        //5. CountVowels
         function CountVowels(params) {
             var x = params.split("");
             var count = 0;
@@ -88,37 +100,43 @@
                     continue;
                 }
             }
-            console.log("Total number of vowels in string: " + count);
+            return count;
         }
-        CountVowels("My name Is viren");
+        let f = CountVowels("My name Is viren");
+        console.log(`Total number of vowels in string: ${f}`);
 
 
-
-        // LongestCountryName
+        //6. LongestCountryName
         function LongestCountryName(params) {
             let temp = [];
             for (let i = 0; i < params.length; i++) {
                 temp[i] = params[i].length;
             }
-            console.log("Longest Country Name is: " + params[temp.indexOf(Math.max(...temp))]);
+            return params[temp.indexOf(Math.max(...temp))];
         }
-        LongestCountryName(["India", "Japan", "united States", "pakistan", "banglades"]);
+        let g = LongestCountryName(["India", "Japan", "united States", "pakistan", "banglades"]);
+        console.log(`Longest Country Name is: ${g}`);
 
 
 
-
-        //JavaScript function as parameter
+        //7. JavaScript function as parameter
         function Greatings() {
             return "Hello";
         }
-        function Message(a, callback) {
-            console.log(callback + " " + a);
+        function Message(a, b) {
+            return (b + " " + a);
         }
-        Message("viren", Greatings());
+        let h = Message("viren", Greatings());
+        console.log(`Output of callback funtion: ${h}`);
 
 
 
-        //Get Function Name
+        //8. Get Function Name
+        function getFunctionName() {
+            return arguments.callee.name
+        }
+        let i = getFunctionName();
+        console.log(`Function name is: ${i}`);
 
     </script>
 </body>
