@@ -32,24 +32,24 @@
 
 
         //2. Arrange in Alphabetical order - words in sentence
-        function AlphabeticalOrder(params) {
+        function alphabeticalOrder(params) {
             var x = params.toUpperCase().split(" ");
             return (x.sort());
         }
-        let b = AlphabeticalOrder("My name Is viren");
+        let b = alphabeticalOrder("My name Is viren");
         console.log(`words of sentence in Alphabetical order : ${b}`);
         // -letter in word
-        function LetterInAlphabeticalOrder(params) {
+        function letterInAlphabeticalOrder(params) {
             var x = params.split("")
             return (x.sort());
         }
-        let c = LetterInAlphabeticalOrder("viren");
+        let c = letterInAlphabeticalOrder("viren");
         console.log(`letters of word in Alphabetical order : ${c}`);
 
 
 
         //3. Firts letter to Upper Case
-        function FirstUpperCase(params) {
+        function firstUpperCase(params) {
             var x = params.split(" ");
             var tempStr = ""
             for (let i = 0; i < x.length; i++) {
@@ -57,14 +57,14 @@
             }
             return (tempStr);
         }
-        let d = FirstUpperCase("My name Is viren");
+        let d = firstUpperCase("My name Is viren");
         console.log(`first letter of alphabet in Upper case: ${d}`);
 
 
 
 
         //4. Longest word in String
-        function LongestWord(params) {
+        function longestWord(params) {
             var temp = [];
             var x = params.split(" ");
             for (let i = 0; i < x.length; i++) {
@@ -72,13 +72,13 @@
             }
             return x[temp.indexOf(Math.max(...temp))];
         }
-        let e = LongestWord("My name Is viren");
+        let e = longestWord("My name Is viren");
         console.log(`Longest Word is: ${e}`);
 
 
 
         //5. CountVowels
-        function CountVowels(params) {
+        function countVowels(params) {
             var x = params.split("");
             var count = 0;
             for (let i = 0; i < x.length; i++) {
@@ -102,31 +102,31 @@
             }
             return count;
         }
-        let f = CountVowels("My name Is viren");
+        let f = countVowels("My name Is viren");
         console.log(`Total number of vowels in string: ${f}`);
 
 
         //6. LongestCountryName
-        function LongestCountryName(params) {
+        function longestCountryName(params) {
             let temp = [];
             for (let i = 0; i < params.length; i++) {
                 temp[i] = params[i].length;
             }
             return params[temp.indexOf(Math.max(...temp))];
         }
-        let g = LongestCountryName(["India", "Japan", "united States", "pakistan", "banglades"]);
+        let g = longestCountryName(["India", "Japan", "united States", "pakistan", "banglades"]);
         console.log(`Longest Country Name is: ${g}`);
 
 
 
         //7. JavaScript function as parameter
-        function Greatings() {
+        function greatings() {
             return "Hello";
         }
-        function Message(a, b) {
+        function message(a, b) {
             return (b + " " + a);
         }
-        let h = Message("viren", Greatings());
+        let h = message("viren", greatings());
         console.log(`Output of callback funtion: ${h}`);
 
 
